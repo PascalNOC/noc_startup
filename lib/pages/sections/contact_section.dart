@@ -217,7 +217,7 @@ class _ContactSectionState extends State<ContactSection> {
 
                 informationCard(Icons.phone,"Téléphone","+212 646 53 48 69"),
 
-                informationCard(Icons.email,"Email","nocentreprise@startup.com"),
+                informationCard(Icons.email,"Email","entreprisesarl@startup.com"),
 
                 informationCard(Icons.language,"Site Web","www.startup.com"),
 
