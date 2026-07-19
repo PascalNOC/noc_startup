@@ -360,13 +360,13 @@ class InformationsSection extends StatelessWidget {
 
                   const SizedBox(height:35),
 
-                  FilledButton(
+                  /*FilledButton(
 
                     onPressed: (){},
 
                     child:  Text(local.fin_txt3),
 
-                  )
+                  )*/
 
                 ],
 

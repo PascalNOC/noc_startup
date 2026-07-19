@@ -147,6 +147,36 @@ abstract class AppLocalizations {
   /// **'Join Us'**
   String get rejoindre;
 
+  /// No description provided for @accueil_txt1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our startup supports businesses, public organizations, and individuals in their digital transformation through intelligent and sustainable solutions.'**
+  String get accueil_txt1;
+
+  /// No description provided for @chiffres.
+  ///
+  /// In en, this message translates to:
+  /// **'Key figures'**
+  String get chiffres;
+
+  /// No description provided for @project.
+  ///
+  /// In en, this message translates to:
+  /// **'projects'**
+  String get project;
+
+  /// No description provided for @user.
+  ///
+  /// In en, this message translates to:
+  /// **'users'**
+  String get user;
+
+  /// No description provided for @accueil_txt2.
+  ///
+  /// In en, this message translates to:
+  /// **'Innovative solutions to support your growth and digital transformation.'**
+  String get accueil_txt2;
+
   /// No description provided for @partners_txt.
   ///
   /// In en, this message translates to:

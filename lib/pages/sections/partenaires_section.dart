@@ -329,7 +329,7 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                   const SizedBox(height:40),
 
-                  FilledButton(
+                  /*FilledButton(
 
                     style: FilledButton.styleFrom(
 
@@ -354,7 +354,7 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                     ),
 
-                  )
+                  )*/
 
                 ],
 

@@ -33,6 +33,21 @@ class AppLocalizationsFr extends AppLocalizations {
   String get rejoindre => 'Nous rejoindre';
 
   @override
+  String get accueil_txt1 => 'Notre startup accompagne les entreprises, les collectivités et les particuliers dans leur transformation numérique grâce à des solutions intelligentes et durables.';
+
+  @override
+  String get chiffres => 'Quelques chiffres';
+
+  @override
+  String get project => 'projets';
+
+  @override
+  String get user => 'utilisateurs';
+
+  @override
+  String get accueil_txt2 => 'Des solutions innovantes pour accompagner votre croissance et votre transformation.';
+
+  @override
   String get partners_txt => 'Nous collaborons avec des universités, entreprises, ONG et institutions pour développer des solutions innovantes.';
 
   @override

@@ -16,9 +16,10 @@ class AccueilSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<LocaleProvider>(context, listen: false,);
 
-    final local = AppLocalizations.of(context)!;
+    
 
     String selectedLanguage = provider.locale.languageCode;
+    final local = AppLocalizations.of(context)!;
 
     return BackgroundSlider(
 
@@ -49,9 +50,9 @@ class AccueilSection extends StatelessWidget {
                 subtitle:
                     local.heroSubtitle,
 
-                buttonText: local.discover,
+                //buttonText: local.discover,
 
-                onPressed: () {},
+                //onPressed: () {},
 
               ),
 
@@ -72,9 +73,9 @@ class AccueilSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Qui sommes-nous ?",
+                    local.whosUs,
 
                     style: TextStyle(
 
@@ -88,12 +89,9 @@ class AccueilSection extends StatelessWidget {
 
                   const SizedBox(height: 25),
 
-                  const Text(
+                   Text(
 
-                    "Notre startup accompagne les entreprises, "
-                    "les collectivités et les particuliers dans "
-                    "leur transformation numérique grâce à des "
-                    "solutions intelligentes et durables.",
+                    local.accueil_txt1,
 
                     textAlign: TextAlign.center,
 
@@ -114,36 +112,36 @@ class AccueilSection extends StatelessWidget {
 
                     alignment: WrapAlignment.center,
 
-                    children: const [
+                    children:  [
 
                       _FeatureCard(
                         icon: Icons.psychology,
-                        title: "Intelligence Artificielle",
+                        title: local.ia,
                       ),
 
                       _FeatureCard(
                         icon: Icons.sensors,
-                        title: "IoT",
+                        title: local.iot,
                       ),
 
                       _FeatureCard(
                         icon: Icons.water_drop,
-                        title: "Gestion de l'eau",
+                        title: local.water,
                       ),
 
                       _FeatureCard(
                         icon: Icons.agriculture,
-                        title: "Agriculture",
+                        title: local.agri,
                       ),
 
                       _FeatureCard(
                         icon: Icons.map,
-                        title: "Cartographie",
+                        title: local.maps,
                       ),
 
                       _FeatureCard(
                         icon: Icons.cloud,
-                        title: "Cloud",
+                        title: local.cloud,
                       ),
 
                     ],
@@ -171,9 +169,9 @@ class AccueilSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Quelques chiffres",
+                    local.chiffres,
 
                     style: TextStyle(
 
@@ -195,26 +193,26 @@ class AccueilSection extends StatelessWidget {
 
                     alignment: WrapAlignment.center,
 
-                    children: const [
+                    children:  [
 
                       _StatCard(
                         value: "50+",
-                        title: "Projets",
+                        title: local.project,
                       ),
 
                       _StatCard(
                         value: "20+",
-                        title: "Partenaires",
+                        title: local.partners,
                       ),
 
                       _StatCard(
                         value: "1000+",
-                        title: "Utilisateurs",
+                        title: local.user,
                       ),
 
                       _StatCard(
                         value: "5",
-                        title: "Pays",
+                        title: local.country,
                       ),
 
                     ],
@@ -262,10 +260,9 @@ class AccueilSection extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  const Text(
+                   Text(
 
-                    "Des solutions innovantes pour accompagner "
-                    "votre croissance et votre transformation.",
+                    local.accueil_txt2,
 
                     textAlign: TextAlign.center,
 
@@ -281,7 +278,7 @@ class AccueilSection extends StatelessWidget {
 
                   const SizedBox(height: 35),
 
-                  FilledButton(
+                  /*FilledButton(
 
                     style: FilledButton.styleFrom(
 
@@ -307,7 +304,7 @@ class AccueilSection extends StatelessWidget {
 
                     ),
 
-                  ),
+                  ),*/
 
                 ],
 

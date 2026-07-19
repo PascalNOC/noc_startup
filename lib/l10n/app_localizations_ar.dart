@@ -33,6 +33,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get rejoindre => 'انضم إلينا';
 
   @override
+  String get accueil_txt1 => 'ترافق شركتنا الناشئة الشركات والمؤسسات والأفراد في رحلتهم نحو التحول الرقمي من خلال حلول ذكية ومستدامة.';
+
+  @override
+  String get chiffres => 'بعض الأرقام';
+
+  @override
+  String get project => 'المشاريع';
+
+  @override
+  String get user => 'المستخدمون';
+
+  @override
+  String get accueil_txt2 => 'حلول مبتكرة لدعم نموكم وتحولكم الرقمي.';
+
+  @override
   String get partners_txt => 'نتعاون مع الجامعات والشركات والمنظمات غير الحكومية والمؤسسات لتطوير حلول مبتكرة.';
 
   @override

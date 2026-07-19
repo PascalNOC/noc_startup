@@ -10,9 +10,9 @@ class AnimatedTextWidget extends StatefulWidget {
 
   final String subtitle;
 
-  final String buttonText;
+  //final String buttonText;
 
-  final VoidCallback onPressed;
+  //final VoidCallback onPressed;
 
   const AnimatedTextWidget({
 
@@ -22,9 +22,9 @@ class AnimatedTextWidget extends StatefulWidget {
 
     required this.subtitle,
 
-    required this.buttonText,
+    //required this.buttonText,
 
-    required this.onPressed,
+    //required this.onPressed,
 
   });
 
@@ -159,7 +159,7 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget>
 
                 const SizedBox(height: 40),
 
-                FilledButton(
+                /*FilledButton(
 
                   style: FilledButton.styleFrom(
 
@@ -173,14 +173,14 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget>
 
                   ),
 
-                  onPressed: widget.onPressed,
+                  /*onPressed: widget.onPressed,
 
                   child: Text(
                     widget.buttonText,
                     style: const TextStyle(fontSize: 18),
-                  ),
+                  ),*/
 
-                )
+                )*/
 
               ],
 

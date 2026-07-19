@@ -13,40 +13,40 @@ import '../../l10n/app_localizations.dart';
 import '../../provider/locale_provider.dart';
 
 class SolutionModel {
-  final int id;
   final String categorie;
   final String liens;
 
   SolutionModel({
-    required this.id,
     required this.categorie,
     required this.liens,
   });
 
   factory SolutionModel.fromJson(Map<String, dynamic> json) {
     return SolutionModel(
-      id: json["id"] is int
-          ? json["id"]
-          : int.parse(json["id"].toString()),
-
-      categorie: json["categorie"].toString(),
-
-      liens: json["liens"].toString(),
+      categorie: json["categorie"],
+      liens: json["lien"],
     );
   }
 }
 
 Future<List<SolutionModel>> getSolutions(String categorie) async {
 
-  final response = await http.post(
-    Uri.parse("http://localhost/ConnectyShop/getSolutions.php"),
-    body: {
+  final uri = Uri.https(
+    "script.google.com",
+    "/macros/s/AKfycbxJXGvpV74jvp9Dr5VrEHpm4TVXk_OVTLJAAlfMv9PsFjyoy1fPMbmIHzFoRv9YwEvy/exec",
+    {
       "categorie": categorie,
     },
   );
 
-  final List<dynamic> data = jsonDecode(response.body);
+  final response = await http.get(uri);
+  print(response);
+  if (response.statusCode != 200) {
+    throw Exception("Erreur ${response.statusCode}");
+  }
 
+  final List<dynamic> data = jsonDecode(response.body);
+  print(data);
   return data
       .map((e) => SolutionModel.fromJson(e))
       .toList();
