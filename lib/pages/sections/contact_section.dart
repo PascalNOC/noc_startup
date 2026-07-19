@@ -11,7 +11,8 @@ import '../../provider/locale_provider.dart';
 
 import 'nocposition.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
@@ -436,7 +437,7 @@ class _ContactSectionState extends State<ContactSection> {
                 ),
 
               ],
-            )
+            ),
 
             const SizedBox(height:60),
 
