@@ -50,7 +50,7 @@ class _StartupHomePageState extends State<StartupHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
+    
     return Scaffold(
 
       appBar: CustomAppBar(),

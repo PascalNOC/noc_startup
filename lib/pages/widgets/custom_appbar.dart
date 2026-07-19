@@ -1,4 +1,10 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -12,10 +18,18 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class _CustomAppBarState extends State<CustomAppBar> {
 
-  String language = "Français";
+  String language = "fr";
+
 
   @override
   Widget build(BuildContext context) {
+
+
+    final provider = Provider.of<LocaleProvider>(context, listen: false,);
+
+    final local = AppLocalizations.of(context)!;
+
+    String selectedLanguage = provider.locale.languageCode;
 
     return AppBar(
 
@@ -39,8 +53,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
           const SizedBox(width: 12),
 
-          const Text(
-            "NOC",
+           Text(
+            local.startupName,
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -60,53 +74,47 @@ class _CustomAppBarState extends State<CustomAppBar> {
         DropdownButtonHideUnderline(
 
           child: DropdownButton<String>(
+              value: selectedLanguage,
 
-            value: language,
+              underline: const SizedBox(),
 
-            dropdownColor: const Color(0xff0D1B2A),
+              dropdownColor: Colors.white,
 
-            iconEnabledColor: Colors.white,
+              items: const [
 
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
+                DropdownMenuItem(
+                  value: "fr",
+                  child: Text("🇫🇷 Français"),
+                ),
+
+                DropdownMenuItem(
+                  value: "en",
+                  child: Text("🇬🇧 English"),
+                ),
+
+                DropdownMenuItem(
+                  value: "es",
+                  child: Text("🇪🇸 Español"),
+                ),
+
+                DropdownMenuItem(
+                  value: "ar",
+                  child: Text("🇲🇦 العربية"),
+                ),
+
+              ],
+
+              onChanged: (value) {
+
+                if(value==null) return;
+
+                provider.setLocale(
+                  Locale(value),
+                );
+
+              },
+
             ),
-
-            items: const [
-
-              DropdownMenuItem(
-                value: "Français",
-                child: Text("Français"),
-              ),
-
-              DropdownMenuItem(
-                value: "English",
-                child: Text("English"),
-              ),
-
-              DropdownMenuItem(
-                value: "Español",
-                child: Text("Español"),
-              ),
-
-              DropdownMenuItem(
-                value: "العربية",
-                child: Text("العربية"),
-              ),
-
-            ],
-
-            onChanged: (value){
-
-              setState(() {
-
-                language = value!;
-
-              });
-
-            },
-
-          ),
 
         ),
 

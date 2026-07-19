@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
 
 class AnimatedTextWidget extends StatefulWidget {
 
@@ -89,6 +93,9 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget>
 
   @override
   Widget build(BuildContext context) {
+    final app = AppLocalizations.of(context)!;
+
+    final provider = Provider.of<LocaleProvider>(context);
 
     return Center(
 

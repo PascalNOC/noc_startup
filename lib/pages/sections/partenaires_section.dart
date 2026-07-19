@@ -1,6 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
+
 class PartenairesSection extends StatefulWidget {
   const PartenairesSection({super.key});
 
@@ -18,11 +23,11 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
   final List<String> logos = [
 
-    "assets/images/partenaires/logo1.png",
-    "assets/images/partenaires/logo2.png",
-    "assets/images/partenaires/logo3.png",
-    "assets/images/partenaires/logo4.png",
-    "assets/images/partenaires/logo1.png",
+    "assets/images/partenaires/smartagriculture.jfif",
+    "assets/images/partenaires/elevage.jfif",
+    "assets/images/partenaires/connectyshop.jfif",
+    "assets/images/partenaires/smartcities.jfif",
+    "assets/images/partenaires/hotel.jfif",
 
   ];
 
@@ -76,6 +81,10 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
   @override
   Widget build(BuildContext context) {
+    
+
+    final provider = Provider.of<LocaleProvider>(context);
+    final local = AppLocalizations.of(context)!;
 
     return Scaffold(
 
@@ -98,13 +107,13 @@ class _PartenairesSectionState extends State<PartenairesSection> {
                 horizontal: 30,
               ),
 
-              child: const Column(
+              child:  Column(
 
                 children: [
 
                   Text(
 
-                    "Nos Partenaires",
+                    local.partners,
 
                     style: TextStyle(
 
@@ -122,9 +131,7 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                   Text(
 
-                    "Nous collaborons avec des universités, "
-                    "entreprises, ONG et institutions "
-                    "pour développer des solutions innovantes.",
+                    local.partners_txt,
 
                     textAlign: TextAlign.center,
 
@@ -184,37 +191,50 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
               alignment: WrapAlignment.center,
 
-              children: const [
+              children:  [
 
                 PartnerCard(
-                  image:"assets/images/partenaires/logo1.png",
-                  title:"Université",
-                  subtitle:"Recherche & Innovation",
+                  image:"assets/images/partenaires/smartagriculture.jfif",
+                  title: local.agricultor,
+                  subtitle: local.agricultordescript,
                 ),
 
                 PartnerCard(
-                  image:"assets/images/partenaires/logo2.png",
-                  title:"Entreprise",
-                  subtitle:"Transformation numérique",
+                  image:"assets/images/partenaires/elevage.jfif",
+                  title:local.eleveurs,
+                  subtitle: local.eleveursdescript,
                 ),
 
                 PartnerCard(
-                  image:"assets/images/partenaires/logo3.png",
-                  title:"ONG",
-                  subtitle:"Développement durable",
+                  image:"assets/images/partenaires/connectyshop.jfif",
+                  title:local.boutiques,
+                  subtitle:local.boutiquesdescript,
                 ),
 
                 PartnerCard(
-                  image:"assets/images/partenaires/logo4.png",
-                  title:"Institution",
-                  subtitle:"Projets nationaux",
+                  image:"assets/images/partenaires/smartcities.jfif",
+                  title: local.smartcities,
+                  subtitle: local.smartcitiesdescript,
                 ),
 
                 PartnerCard(
-                  image:"assets/images/partenaires/logo1.png",
-                  title:"Startup",
-                  subtitle:"Innovation technologique",
+                  image:"assets/images/partenaires/hotel.jfif",
+                  title:local.grandspace,
+                  subtitle: local.grandespacedescript,
                 ),
+
+                PartnerCard(
+                  image:"assets/images/partenaires/population.jfif",
+                  title:local.populationServices,
+                  subtitle: local.populationServicesdescript,
+                ),
+
+                PartnerCard(
+                  image:"assets/images/partenaires/gouv.jfif",
+                  title:local.gov,
+                  subtitle: local.govdescription,
+                ),
+
 
               ],
 
@@ -241,15 +261,15 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                 alignment: WrapAlignment.center,
 
-                children: const [
+                children:  [
 
-                  NumberCard(number:"35+",label:"Partenaires"),
+                  NumberCard(number:"35+",label:local.partners),
 
-                  NumberCard(number:"18",label:"Pays"),
+                  NumberCard(number:"18",label:local.country),
 
-                  NumberCard(number:"120+",label:"Projets"),
+                  NumberCard(number:"120+",label:local.ourProjects),
 
-                  NumberCard(number:"10",label:"Années"),
+                  NumberCard(number:"10",label:local.year),
 
                 ],
 
@@ -272,9 +292,9 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Devenez notre partenaire",
+                    local.becomePartner,
 
                     style: TextStyle(
 
@@ -290,14 +310,8 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                   const SizedBox(height:25),
 
-                  const Text(
-
-                    "Vous souhaitez développer un projet "
-                    "innovant avec nous ?"
-
-                    "\n"
-
-                    "Construisons ensemble les solutions de demain.",
+                   Text(
+                    local.partnersdescript,
 
                     textAlign: TextAlign.center,
 
@@ -332,9 +346,9 @@ class _PartenairesSectionState extends State<PartenairesSection> {
 
                     onPressed:(){},
 
-                    child: const Text(
+                    child: Text(
 
-                      "Nous rejoindre",
+                      local.rejoindre,
 
                       style: TextStyle(fontSize:18),
 

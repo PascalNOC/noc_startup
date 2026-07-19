@@ -1,0 +1,187 @@
+{
+  "@@locale": "es",
+
+  "startupName": "NOC",
+
+  "home": "Inicio",
+  "solutions": "Nuestras Soluciones",
+  "partners": "Nuestros Socios",
+  "contact": "Contáctenos",
+  "information": "Información",
+
+
+  "rejoindre": "Únase a Nosotros",
+
+"partners_txt": "Colaboramos con universidades, empresas, ONG e instituciones para desarrollar soluciones innovadoras.",
+
+"partnersdescript": "¿Desea desarrollar un proyecto innovador con nosotros?\nConstruyamos juntos las soluciones del mañana.",
+
+"agricultor": "Agricultores",
+"agricultordescript": "Agricultura Inteligente",
+
+"eleveurs": "Ganadería",
+"eleveursdescript": "Granjas Avícolas Conectadas",
+
+"boutiques": "Tiendas",
+"boutiquesdescript": "Tiendas Inteligentes",
+
+"smartcities": "Ciudades Inteligentes",
+"smartcitiesdescript": "Ciudades conectadas e inteligentes",
+
+"grandspace": "Soluciones para Grandes Espacios",
+"grandespacedescript": "Soluciones adaptadas a sus necesidades diarias",
+
+"populationServices": "Servicios para la Población",
+"populationServicesdescript": "Soluciones innovadoras al servicio de los ciudadanos",
+
+"gov": "Soluciones Gubernamentales",
+"govdescription": "Soluciones digitales y ecológicas para las administraciones públicas",
+
+"year": "Años",
+
+"country": "Países",
+
+  "welcome": "Bienvenido a nuestra startup",
+
+  "solutionstexte": "Diseñamos soluciones innovadoras basadas en inteligencia artificial, Internet de las Cosas, cartografía digital y plataformas web.",
+
+  "ia": "Inteligencia Artificial",
+  "iadescript": "Desarrollo de algoritmos de Machine Learning y Deep Learning para apoyar la toma de decisiones.",
+
+  "iot": "Internet de las Cosas",
+  "iotdescript": "Sensores inteligentes, recopilación de datos y monitoreo en tiempo real.",
+
+  "agri": "Agricultura Inteligente",
+  "agridescript": "Optimización de la producción agrícola mediante el análisis inteligente de datos.",
+
+  "water": "Gestión del Agua",
+  "waterdescript": "Control inteligente del riego y optimización del consumo de agua.",
+
+  "maps": "Cartografía",
+  "mapsdescript": "SIG, cartografía interactiva, geolocalización y seguimiento de recursos.",
+
+  "cloud": "Nube y Plataformas",
+  "clouddescript": "Aplicaciones web, Flutter, API REST y soluciones seguras en la nube.",
+
+  "heroTitle": "Construyamos el futuro juntos",
+
+  "heroSubtitle": "Desarrollamos soluciones digitales innovadoras para empresas, organizaciones y particulares.",
+
+  "discover": "Descubrir",
+
+  "learnMore": "Más información",
+
+  "send": "Enviar",
+
+  "aboutUs": "Sobre nosotros",
+
+  "ourServices": "Nuestros servicios",
+
+  "ourProjects": "Nuestros proyectos",
+
+  "ourMission": "Nuestra misión",
+
+  "ourVision": "Nuestra visión",
+
+  "ourValues": "Nuestros valores",
+
+  "whyChooseUs": "¿Por qué elegirnos?",
+
+  "innovation": "Innovación",
+  "rapidity": "Rapidez",
+
+  "quality": "Calidad",
+
+  "security": "Seguridad",
+
+  "support": "Soporte",
+
+  "phone": "Teléfono",
+
+  "email": "Correo electrónico",
+
+  "website": "Sitio web",
+
+  "address": "Dirección",
+
+  "openingHours": "Horario",
+
+  "ourPartners": "Nuestros socios",
+
+  "ourTeam": "Nuestro equipo",
+
+  "ourExpertise": "Nuestra experiencia",
+
+  "ourHistory": "Nuestra historia",
+
+  "ourAchievements": "Nuestros logros",
+
+  "ourLocation": "Nuestra ubicación",
+
+  "followUs": "Síguenos",
+
+  "becomePartner": "Conviértase en socio",
+
+  "contactUs": "Póngase en contacto con nosotros",
+
+  "contactUs_txt": "Nuestro equipo está a su disposición para responder a todas sus preguntas.",
+
+  "messagesent": "Mensaje enviado",
+
+  "sent": "Enviar",
+
+  "gmaps": "Google Maps",
+  "whosUs": "¿Quiénes Somos?",
+
+"infoinfo": "Una startup innovadora al servicio de la transformación digital.",
+
+"stories_txt": "NOC es una startup fundada en 2021 tras su participación e incubación en el Clúster VALBIOM, ubicado en Oujda.\n\nLa empresa tiene como objetivo desarrollar soluciones innovadoras que combinan las tecnologías tradicionales y modernas. Su primer proyecto fue un interruptor inteligente mejorado, que obtuvo el séptimo lugar en un concurso de innovación.\n\nActualmente desarrolla varias soluciones, entre ellas una plataforma inteligente destinada a los productores avícolas con granjas cerradas.\n\nAunque todavía está en sus inicios, la startup aspira a expandirse a nivel nacional e internacional.",
+
+"ourVision_txt": "Construir un mundo donde las tecnologías tradicionales y modernas se unan para crear soluciones innovadoras y respetuosas con el medio ambiente.",
+
+"ourMission_text": "Diseñar soluciones inteligentes, sencillas y accesibles que respondan a las necesidades de empresas, instituciones y ciudadanos.",
+
+"ourValues_text": "Innovación\nCalidad\nTransparencia\nSostenibilidad\nColaboración\nExcelencia",
+
+"deepia": "Deep Learning",
+
+"flutter_app": "Desarrollo Flutter",
+
+"cyber": "Ciberseguridad",
+
+"visiocomput": "Visión por Computador",
+
+"bigdata": "Ciencia de Datos",
+"ourEv": "Nuestra evolución",
+
+"ourEv1": "Creación de la Startup",
+
+"ourEv2": "Primeros Socios",
+
+"ourEv3": "Despliegue de Nuestras Primeras Soluciones",
+
+"ourEv4": "Búsqueda de financiación",
+
+"ourEv5": "Fundraising and Partnership Development",
+
+"accompagnement": "Acompañamiento",
+
+"fin_txt1": "Juntos por soluciones ecológicas, responsables y orientadas al futuro.",
+
+"fin_txt2": "Nuestra ambición es poner la tecnología al servicio de una innovación sostenible.",
+
+"fin_txt3": "Descubrir Nuestras Soluciones",
+
+  "sendMessage": "Envíenos un mensaje",
+  "close": "Cerrar",
+
+  "name": "Nombre",
+
+  "firstName": "Apellido",
+
+  "subject": "Asunto",
+
+  "message": "Mensaje",
+
+  "copyright": "Todos los derechos reservados."
+}

@@ -1,6 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
+
 class BackgroundSlider extends StatefulWidget {
 
   final List<String> images;
@@ -59,6 +64,10 @@ class _BackgroundSliderState extends State<BackgroundSlider> {
 
   @override
   Widget build(BuildContext context) {
+    
+
+    final provider = Provider.of<LocaleProvider>(context);
+    final local = AppLocalizations.of(context)!;
 
     return Stack(
 

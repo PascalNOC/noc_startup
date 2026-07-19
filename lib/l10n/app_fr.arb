@@ -1,0 +1,207 @@
+{
+  "@@locale": "fr",
+
+  "startupName": "NOC",
+
+  "home": "Accueil",
+  "solutions": "Nos solutions",
+  "partners": "Nos partenaires",
+
+
+"rejoindre": "Nous rejoindre",
+
+"partners_txt": "Nous collaborons avec des universités, entreprises, ONG et institutions pour développer des solutions innovantes.",
+
+"partnersdescript": "Vous souhaitez développer un projet innovant avec nous ?\nConstruisons ensemble les solutions de demain.",
+
+"agricultor": "Agriculteurs",
+"agricultordescript": "Agriculture intelligente",
+
+"eleveurs": "Élevage",
+"eleveursdescript": "Fermes avicoles connectées",
+
+"boutiques": "Boutiques",
+"boutiquesdescript": "Boutiques connectées",
+
+"smartcities": "Villes intelligentes",
+"smartcitiesdescript": "Villes connectées et intelligentes",
+
+"grandspace": "Solutions pour les grands espaces",
+"grandespacedescript": "Des solutions adaptées à vos besoins quotidiens",
+
+"populationServices": "Services à la population",
+"populationServicesdescript": "Des solutions innovantes au service des citoyens",
+
+"gov": "Solutions gouvernementales",
+"govdescription": "Des solutions numériques et écologiques au service des administrations",
+
+"year": "Années",
+
+"country": "Pays",
+
+
+  
+  "contact": "Nous contacter",
+
+  "information": "Informations",
+
+  "welcome": "Bienvenue dans notre startup",
+
+  "heroTitle": "Construisons le futur ensemble",
+
+
+
+  "solutionstexte": "Nous concevons des solutions innovantes basées sur l'intelligence artificielle, les objets connectés, la cartographie numérique et les plateformes web.",
+
+
+
+  "ia": "Intelligence Artificielle",
+  "iadescript": "Développement d'algorithmes de Machine Learning et Deep Learning pour l'aide à la décision.",
+
+  "iot": "Internet des Objets",
+  "iotdescript": "Capteurs intelligents, collecte des données et surveillance en temps réel.",
+
+  "agri": "Agriculture Intelligente",
+  "agridescript": "Optimisation de la production agricole grâce à l'analyse intelligente des données.",
+
+  "water": "Gestion de l'Eau",
+  "waterdescript": "Pilotage intelligent de l'irrigation et optimisation de la consommation d'eau.",
+
+  "maps": "Cartographie",
+  "mapsdescript": "SIG, cartographie interactive, géolocalisation et suivi des ressources.",
+
+  "cloud": "Cloud & Plateformes",
+  "clouddescript": "Applications Web, Flutter, API REST et solutions Cloud sécurisées.",
+
+
+  "heroSubtitle": "Nous développons des solutions numériques innovantes pour les entreprises, les collectivités et les particuliers.",
+
+  "discover": "Découvrir",
+
+  "learnMore": "En savoir plus",
+
+  "send": "Envoyer",
+
+  "aboutUs": "À propos de nous",
+
+  "ourServices": "Nos services",
+
+  "ourProjects": "Nos projets",
+
+  "ourMission": "Notre mission",
+
+  "ourVision": "Notre vision",
+
+  "ourValues": "Nos valeurs",
+
+  "whyChooseUs": "Pourquoi nous choisir ?",
+
+  "innovation": "Innovation",
+
+  "quality": "Qualité",
+
+  "rapidity": "Rapidité",
+
+  "security": "Sécurité",
+
+  "support": "Support",
+
+
+  "phone": "Téléphone",
+
+  "email": "E-mail",
+
+  "website": "Site Web",
+
+  "address": "Adresse",
+
+  "openingHours": "Heures d'ouverture",
+
+
+  "ourPartners": "Nos partenaires",
+
+  "ourTeam": "Notre équipe",
+
+  "ourExpertise": "Notre expertise",
+
+  "ourHistory": "Notre histoire",
+
+  "ourAchievements": "Nos réalisations",
+
+  "ourLocation": "Notre localisation",
+
+  "followUs": "Suivez-nous",
+
+  "becomePartner": "Devenir partenaire",
+
+  "contactUs": "Contactez-nous",
+
+
+  "contactUs_txt": "Notre équipe est à votre écoute pour répondre à toutes vos questions.",
+
+  "messagesent": "Message envoyé",
+
+  "sent": "Envoyer",
+
+  "gmaps": "Google Maps",
+
+
+"whosUs": "Qui sommes-nous ?",
+
+"infoinfo": "Une startup innovante au service de la transformation numérique.",
+
+"stories_txt": "NOC est une startup créée en 2021 à la suite de sa participation et de son incubation au sein du Cluster VALBIOM basé à Oujda.\n\nLa startup a pour vocation de concevoir des solutions innovantes conciliant les technologies traditionnelles et modernes. Son premier projet était un interrupteur intelligent (« interrupteur augmenté »), qui lui a permis d'obtenir la septième place lors d'un concours d'innovation.\n\nAujourd'hui, plusieurs solutions sont en cours de développement, notamment une plateforme intelligente destinée aux éleveurs de volailles en bâtiments fermés.\n\nLa startup est encore à ses débuts et ambitionne de se faire connaître ainsi que de se développer à l'échelle nationale et internationale.",
+
+"ourVision_txt": "Construire un monde où les technologies d'hier et d'aujourd'hui se complètent pour donner naissance à des solutions innovantes et respectueuses de l'environnement.",
+
+"ourMission_text": "Concevoir des solutions intelligentes, simples et accessibles répondant aux besoins des entreprises, des collectivités et des particuliers.",
+
+"ourValues_text": "Innovation\nQualité\nTransparence\nDurabilité\nCollaboration\nExcellence",
+
+"deepia": "Deep Learning",
+
+"flutter_app": "Développement Flutter",
+
+"cyber": "Cybersécurité",
+
+"visiocomput": "Vision par ordinateur",
+
+"bigata": "Science des données",
+"ourEv": "Notre évolution",
+
+"ourEv1": "Création de la startup",
+
+"ourEv2": "Premiers partenaires",
+
+"ourEv3": "Déploiement de nos premières solutions",
+
+"ourEv4": "Recherche de financements",
+
+"ourEv5": "Recherche de financements et de partenariats",
+
+"accompagnement": "Accompagnement",
+
+"fin_txt1": "Ensemble pour des solutions écologiques, responsables et tournées vers l'avenir.",
+
+"fin_txt2": "Notre ambition est de mettre la technologie au service d'une innovation durable.",
+
+"fin_txt3": "Découvrir nos solutions",
+
+
+
+  "close": "Fermer",
+
+  "sendMessage": "Envoyez-nous un message",
+
+  "name": "Nom",
+
+  "firstName": "Prénom",
+
+  "subject": "Sujet",
+
+  "message": "Message",
+
+  "copyright": "Tous droits réservés."
+
+
+}

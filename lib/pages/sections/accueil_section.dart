@@ -3,11 +3,22 @@ import 'package:flutter/material.dart';
 import '../widgets/background_slider.dart';
 import '../widgets/animated_text.dart';
 
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
+
+
 class AccueilSection extends StatelessWidget {
   const AccueilSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<LocaleProvider>(context, listen: false,);
+
+    final local = AppLocalizations.of(context)!;
+
+    String selectedLanguage = provider.locale.languageCode;
 
     return BackgroundSlider(
 
@@ -33,14 +44,12 @@ class AccueilSection extends StatelessWidget {
 
               child: AnimatedTextWidget(
 
-                title: "Bienvenue chez NOC",
+                title: local.welcome,
 
                 subtitle:
-                    "Ici Nous développons des solutions innovantes écologiques basées sur "
-                    "l'Intelligence Artificielle, l'IoT et les technologies "
-                    "numériques pour relever les défis de demain.",
+                    local.heroSubtitle,
 
-                buttonText: "Découvrir",
+                buttonText: local.discover,
 
                 onPressed: () {},
 
@@ -233,9 +242,9 @@ class AccueilSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                  Text(
 
-                    "Construisons ensemble le futur",
+                   local.heroTitle,
 
                     textAlign: TextAlign.center,
 
@@ -290,9 +299,9 @@ class AccueilSection extends StatelessWidget {
 
                     onPressed: () {},
 
-                    child: const Text(
+                    child: Text(
 
-                      "Nous contacter",
+                      local.contactUs,
 
                       style: TextStyle(fontSize: 18),
 
@@ -332,7 +341,9 @@ class _FeatureCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final app = AppLocalizations.of(context)!;
 
+    final provider = Provider.of<LocaleProvider>(context);
     return Container(
 
       width: 220,

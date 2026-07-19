@@ -1,4 +1,13 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
 
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
@@ -16,6 +25,8 @@ class _ContactSectionState extends State<ContactSection> {
   final sujet = TextEditingController();
   final message = TextEditingController();
 
+  bool loading=false;
+
   @override
   void dispose() {
     nom.dispose();
@@ -26,6 +37,101 @@ class _ContactSectionState extends State<ContactSection> {
     message.dispose();
     super.dispose();
   }
+
+  Future<void> envoyerMessage() async {
+
+// Vérification des champs obligatoires
+    if (nom.text.isEmpty ||
+        prenom.text.isEmpty ||
+        email.text.isEmpty ||
+        telephone.text.isEmpty ||
+        sujet.text.isEmpty ||
+        message.text.isEmpty) {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Veuillez remplir tous les champs."),
+        ),
+      );
+
+      return;
+    }
+
+    // Vérification de l'adresse email
+    if (!RegExp(r'^[\w\.-]+@[\w\.-]+\.\w+$').hasMatch(email.text.trim())) {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Adresse email invalide."),
+        ),
+      );
+
+      return;
+    }
+
+    setState(() {
+      loading = true;
+    });
+
+    final response = await http.post(
+      Uri.parse(
+        "http://localhost/ConnectyShop/contact_nocstartup.php",
+      ),
+      body: {
+        "nom": nom.text,
+        "prenom": prenom.text,
+        "email": email.text,
+        "telephone": telephone.text,
+        "sujet": sujet.text,
+        "message": message.text,
+      },
+    );
+  
+  final data=jsonDecode(response.body);
+  print(data);
+
+  if(data["success"]==true){
+
+    nom.clear();
+    prenom.clear();
+    email.clear();
+    telephone.clear();
+    sujet.clear();
+    message.clear();
+
+    ScaffoldMessenger.of(context).showSnackBar(
+
+      SnackBar(
+
+        content: Text(
+          AppLocalizations.of(context)!.messagesent,
+        ),
+
+      ),
+
+    );
+
+  }else{
+
+    ScaffoldMessenger.of(context).showSnackBar(
+
+      const SnackBar(
+
+        content: Text(
+          "Erreur lors de l'envoi.",
+        ),
+
+      ),
+
+    );
+
+  }
+
+  setState(() {
+    loading=false;
+  });
+
+}
 
   Widget informationCard(
       IconData icon,
@@ -135,7 +241,10 @@ class _ContactSectionState extends State<ContactSection> {
 
   @override
   Widget build(BuildContext context) {
+    
 
+    final provider = Provider.of<LocaleProvider>(context);
+    final local = AppLocalizations.of(context)!;
     return Scaffold(
 
       backgroundColor: Colors.grey.shade100,
@@ -157,13 +266,13 @@ class _ContactSectionState extends State<ContactSection> {
                 horizontal:20,
               ),
 
-              child: const Column(
+              child:  Column(
 
                 children: [
 
                   Text(
 
-                    "Nous contacter",
+                    local.contactUs,
 
                     style: TextStyle(
 
@@ -181,7 +290,7 @@ class _ContactSectionState extends State<ContactSection> {
 
                   Text(
 
-                    "Notre équipe est à votre écoute pour répondre à toutes vos questions.",
+                   local.contactUs_txt,
 
                     textAlign: TextAlign.center,
 
@@ -215,15 +324,15 @@ class _ContactSectionState extends State<ContactSection> {
 
               children: [
 
-                informationCard(Icons.phone,"Téléphone","+212 646 53 48 69"),
+                informationCard(Icons.phone,local.phone,"+212 646 53 48 69"),
 
-                informationCard(Icons.email,"Email","entreprisesarl@startup.com"),
+                informationCard(Icons.email,local.email,"entreprisesarl@startup.com"),
 
-                informationCard(Icons.language,"Site Web","www.startup.com"),
+                informationCard(Icons.language,local.website,"www.startup.com"),
 
-                informationCard(Icons.location_on,"Adresse","Tanger, Morocco, Rue Boukhalef"),
+                informationCard(Icons.location_on,local.address,"Tanger, Morocco, Rue Boukhalef"),
 
-                informationCard(Icons.schedule,"Horaires","Lun - Ven\n08h00 - 16h30"),
+                informationCard(Icons.schedule,local.openingHours,"Lun - Ven\n08h00 - 16h30"),
 
               ],
 
@@ -231,9 +340,9 @@ class _ContactSectionState extends State<ContactSection> {
 
             const SizedBox(height:60),
 
-            const Text(
+            Text(
 
-              "Nos réseaux sociaux",
+             local.followUs,
 
               style: TextStyle(
 
@@ -275,9 +384,9 @@ class _ContactSectionState extends State<ContactSection> {
 
                 children: [
 
-                  const Text(
+                  Text(
 
-                    "Envoyez-nous un message",
+                    local.sendMessage,
 
                     style: TextStyle(
 
@@ -291,48 +400,35 @@ class _ContactSectionState extends State<ContactSection> {
 
                   const SizedBox(height:30),
 
-                  champ(nom,"Nom"),
+                  champ(nom,local.name),
 
-                  champ(prenom,"Prénom"),
+                  champ(prenom,local.firstName),
 
-                  champ(email,"Email"),
+                  champ(email,local.email),
 
-                  champ(telephone,"Téléphone"),
+                  champ(telephone,local.phone),
 
-                  champ(sujet,"Sujet"),
+                  champ(sujet,local.subject),
 
-                  champ(message,"Votre message",lines:6),
+                  champ(message,local.message,lines:6),
+                  
 
                   const SizedBox(height:25),
+                  
 
-                  FilledButton.icon(
+                  loading
 
-                    style: FilledButton.styleFrom(
+                  ? const CircularProgressIndicator()
 
-                      minimumSize: const Size(220,55),
+                  : FilledButton.icon(
 
-                    ),
+                      onPressed: envoyerMessage,
 
-                    onPressed: (){
+                      icon: const Icon(Icons.send),
 
-                      ScaffoldMessenger.of(context).showSnackBar(
-
-                        const SnackBar(
-
-                          content: Text("Message envoyé."),
-
-                        ),
-
-                      );
-
-                    },
-
-                    icon: const Icon(Icons.send),
-
-                    label: const Text("Envoyer"),
+                      label: Text(local.sent),
 
                   )
-
                 ],
 
               ),
@@ -353,9 +449,9 @@ class _ContactSectionState extends State<ContactSection> {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Notre localisation",
+                   local.ourLocation,
 
                     style: TextStyle(
 
@@ -381,11 +477,11 @@ class _ContactSectionState extends State<ContactSection> {
 
                     ),
 
-                    child: const Center(
+                    child:  Center(
 
                       child: Text(
 
-                        "Google Maps\n(à intégrer)",
+                        local.gmaps,
 
                         textAlign: TextAlign.center,
 

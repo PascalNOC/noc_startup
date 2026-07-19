@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
+
 class InformationsSection extends StatelessWidget {
   const InformationsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
+
+    final provider = Provider.of<LocaleProvider>(context);
+    final local = AppLocalizations.of(context)!;
 
     return Scaffold(
 
@@ -29,13 +38,13 @@ class InformationsSection extends StatelessWidget {
                 horizontal: 25,
               ),
 
-              child: const Column(
+              child:  Column(
 
                 children: [
 
                   Text(
 
-                    "Qui sommes-nous ?",
+                    local.whosUs,
 
                     style: TextStyle(
 
@@ -53,7 +62,7 @@ class InformationsSection extends StatelessWidget {
 
                   Text(
 
-                    "Une startup innovante au service de la transformation numérique.",
+                    local.infoinfo,
 
                     textAlign: TextAlign.center,
 
@@ -81,11 +90,9 @@ class InformationsSection extends StatelessWidget {
 
               Icons.history,
 
-              "Notre histoire",
+              local.ourHistory,
 
-              "NOC est une startup monté en 2021 après sa participation et son incubation au sein du Cluster VALBIOM qui siège à Oujda, "
-              "La startup a pour vocation de fournir des solutions innovantes combinant et conciliant ancien et nouveau. Pour son premier projet, il a proposé une solution intérupteur-augmenté avec lequel il remporté la septième place. Aujourd'hui au sein de la startup plursieurs solutions sont en développement dont parmi elles une solution d'aide aux éléveurs de volailles en enceintes fermées."
-              "La startup est encore à ces débuts et cherches à se faire connaitre et s'étendre à grande échelle.",
+              local.stories_txt,
 
             ),
 
@@ -93,9 +100,9 @@ class InformationsSection extends StatelessWidget {
 
               Icons.visibility,
 
-              "Notre vision",
+              local.ourVision,
 
-              "Construire un monde où l'ancien et le nouveau se retrouvent pour donner naissance à des solutions innovantes plus écologiques.",
+              local.ourVision_txt,
 
             ),
 
@@ -103,9 +110,9 @@ class InformationsSection extends StatelessWidget {
 
               Icons.flag,
 
-              "Notre mission",
+              local.ourMission,
 
-              "Concevoir des solutions intelligentes, simples et accessibles répondant aux besoins des entreprises, collectivités et particuliers.",
+              local.ourMission_text,
 
             ),
 
@@ -113,9 +120,9 @@ class InformationsSection extends StatelessWidget {
 
               Icons.favorite,
 
-              "Nos valeurs",
+              local.ourValues,
 
-              "Innovation\nQualité\nTransparence\nDurabilité\nCollaboration\nExcellence",
+              local.ourValues_text,
 
             ),
 
@@ -136,9 +143,9 @@ class InformationsSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Notre expertise",
+                    local.ourExpertise,
 
                     style: TextStyle(
 
@@ -160,27 +167,27 @@ class InformationsSection extends StatelessWidget {
 
                     alignment: WrapAlignment.center,
 
-                    children: const [
+                    children:  [
 
-                      SkillCard("Intelligence Artificielle"),
+                      SkillCard(local.ia),
 
-                      SkillCard("Deep Learning"),
+                      SkillCard(local.deepia),
 
-                      SkillCard("IoT"),
+                      SkillCard(local.iot),
 
-                      SkillCard("Agriculture intelligente"),
+                      SkillCard(local.agri),
 
-                      SkillCard("SIG"),
+                      SkillCard(local.maps),
 
-                      SkillCard("Flutter"),
+                      SkillCard(local.flutter_app),
 
-                      SkillCard("Cloud"),
+                      SkillCard(local.cloud),
 
-                      SkillCard("Cybersécurité"),
+                      SkillCard(local.cyber),
 
-                      SkillCard("Vision par ordinateur"),
+                      SkillCard(local.visiocomput),
 
-                      SkillCard("Big Data"),
+                      SkillCard(local.bigdata),
 
                     ],
 
@@ -207,9 +214,9 @@ class InformationsSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Notre évolution",
+                    local.ourEv,
 
                     style: TextStyle(
 
@@ -223,15 +230,15 @@ class InformationsSection extends StatelessWidget {
 
                   const SizedBox(height:40),
 
-                  const TimelineCard("2021","Création de la startup"),
+                   TimelineCard("2021",local.ourEv1),
 
-                  const TimelineCard("2023","Premiers partenaires"),
+                   TimelineCard("2023",local.ourEv2),
 
-                  const TimelineCard("2024","Déploiement de nos premières solutions"),
+                   TimelineCard("2024",local.ourEv3),
 
-                  const TimelineCard("2025","Expansion internationale"),
+                   TimelineCard("2025",local.ourEv4),
 
-                  const TimelineCard("2026","Développement des solutions IA"),
+                   TimelineCard("2026",local.ourEv5),
 
                 ],
 
@@ -254,9 +261,9 @@ class InformationsSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Pourquoi nous choisir ?",
+                    local.whyChooseUs,
 
                     style: TextStyle(
 
@@ -278,19 +285,19 @@ class InformationsSection extends StatelessWidget {
 
                     alignment: WrapAlignment.center,
 
-                    children: const [
+                    children:  [
 
-                      AdvantageCard(Icons.speed,"Rapidité"),
+                      AdvantageCard(Icons.speed,local.rapidity),
 
-                      AdvantageCard(Icons.workspace_premium,"Qualité"),
+                      AdvantageCard(Icons.workspace_premium,local.quality),
 
-                      AdvantageCard(Icons.security,"Sécurité"),
+                      AdvantageCard(Icons.security,local.security),
 
-                      AdvantageCard(Icons.support_agent,"Support"),
+                      AdvantageCard(Icons.support_agent,local.support),
 
-                      AdvantageCard(Icons.groups,"Accompagnement"),
+                      AdvantageCard(Icons.groups,local.accompagnement),
 
-                      AdvantageCard(Icons.lightbulb,"Innovation"),
+                      AdvantageCard(Icons.lightbulb,local.innovation),
 
                     ],
 
@@ -317,9 +324,9 @@ class InformationsSection extends StatelessWidget {
 
                 children: [
 
-                  const Text(
+                   Text(
 
-                    "Ensemble pour des solutions écologiques et responsables tournées vers l'avenir",
+                    local.fin_txt1,
 
                     style: TextStyle(
 
@@ -335,9 +342,9 @@ class InformationsSection extends StatelessWidget {
 
                   const SizedBox(height:25),
 
-                  const Text(
+                   Text(
 
-                    "Notre ambition est de mettre la technologie au service de l'innovation durable.",
+                    local.fin_txt2,
 
                     textAlign: TextAlign.center,
 
@@ -357,7 +364,7 @@ class InformationsSection extends StatelessWidget {
 
                     onPressed: (){},
 
-                    child: const Text("Découvrir nos solutions"),
+                    child:  Text(local.fin_txt3),
 
                   )
 

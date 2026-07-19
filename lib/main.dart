@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
+
 import 'pages/startup_home_page.dart';
+import 'provider/locale_provider.dart';
+import 'l10n/app_localizations.dart';
 
 void main() {
-  runApp(const StartupApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => LocaleProvider(),
+      child: const StartupApp(),
+    ),
+  );
 }
 
 class StartupApp extends StatelessWidget {
@@ -10,9 +20,28 @@ class StartupApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final languageProvider = Provider.of<LocaleProvider>(context);
+
     return MaterialApp(
-      title: 'Startup',
       debugShowCheckedModeBanner: false,
+
+      title: 'Startup',
+
+      locale: languageProvider.locale,
+
+      supportedLocales: const [
+        Locale('fr'),
+        Locale('en'),
+        Locale('es'),
+        Locale('ar'),
+      ],
+
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
 
       theme: ThemeData(
         useMaterial3: true,
@@ -27,10 +56,10 @@ class StartupApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
 
-      bottomAppBarTheme: const BottomAppBarThemeData(
-        color: Colors.white,
-        elevation: 8,
-      ),
+        bottomAppBarTheme: const BottomAppBarThemeData(
+          color: Colors.white,
+          elevation: 8,
+        ),
       ),
 
       home: const StartupHomePage(),

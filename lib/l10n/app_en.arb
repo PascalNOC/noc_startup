@@ -1,0 +1,194 @@
+{
+  "@@locale": "en",
+
+  "startupName": "NOC",
+
+  "home": "Home",
+
+  "solutions": "Our Solutions",
+
+  "partners": "Our Partners",
+
+  "contact": "Contact Us",
+
+  "information": "Information",
+
+  "welcome": "Welcome to our startup",
+
+  "rejoindre": "Join Us",
+
+"partners_txt": "We collaborate with universities, companies, NGOs and institutions to develop innovative solutions.",
+
+"partnersdescript": "Would you like to develop an innovative project with us?\nLet's build tomorrow's solutions together.",
+
+"agricultor": "Farmers",
+"agricultordescript": "Smart Agriculture",
+
+"eleveurs": "Livestock",
+"eleveursdescript": "Connected Poultry Farms",
+
+"boutiques": "Shops",
+"boutiquesdescript": "Connected Retail Stores",
+
+"smartcities": "Smart Cities",
+"smartcitiesdescript": "Connected and Intelligent Cities",
+
+"grandspace": "Large-Scale Solutions",
+"grandespacedescript": "Tailored solutions for your daily needs",
+
+"populationServices": "Citizen Services",
+"populationServicesdescript": "Innovative solutions serving the public",
+
+"gov": "Government Solutions",
+"govdescription": "Digital and environmentally friendly solutions for governments",
+
+"year": "Years",
+
+"country": "Countries",
+
+
+
+  "heroTitle": "Let's build the future together",
+  "solutionstexte": "We design innovative solutions based on artificial intelligence, the Internet of Things, digital mapping, and web platforms.",
+
+  "ia": "Artificial Intelligence",
+  "iadescript": "Development of Machine Learning and Deep Learning algorithms for decision support.",
+
+  "iot": "Internet of Things",
+  "iotdescript": "Smart sensors, data collection and real-time monitoring.",
+
+  "agri": "Smart Agriculture",
+  "agridescript": "Optimization of agricultural production through intelligent data analysis.",
+
+  "water": "Water Management",
+  "waterdescript": "Smart irrigation control and water consumption optimization.",
+
+  "maps": "Mapping",
+  "mapsdescript": "GIS, interactive mapping, geolocation and resource monitoring.",
+
+  "cloud": "Cloud & Platforms",
+  "clouddescript": "Web applications, Flutter, REST APIs and secure cloud solutions.",
+
+  "heroSubtitle": "We develop innovative digital solutions for businesses, organizations and individuals.",
+
+  "discover": "Discover",
+
+  "learnMore": "Learn More",
+
+  "send": "Send",
+
+  "aboutUs": "About Us",
+
+  "ourServices": "Our Services",
+
+  "ourProjects": "Our Projects",
+
+  "ourMission": "Our Mission",
+
+  "ourVision": "Our Vision",
+
+  "ourValues": "Our Values",
+
+  "whyChooseUs": "Why Choose Us?",
+
+  "innovation": "Innovation",
+
+  "rapidity": "Speed",
+
+  "quality": "Quality",
+
+  "security": "Security",
+
+  "support": "Support",
+
+  "phone": "Phone",
+
+  "email": "Email",
+
+  "website": "Website",
+
+  "address": "Address",
+
+  "openingHours": "Opening Hours",
+
+  "ourPartners": "Our Partners",
+
+  "ourTeam": "Our Team",
+
+  "ourExpertise": "Our Expertise",
+
+  "ourHistory": "Our History",
+
+  "ourAchievements": "Our Achievements",
+
+  "ourLocation": "Our Location",
+
+  "followUs": "Follow Us",
+
+  "becomePartner": "Become a Partner",
+
+  "contactUs": "Contact Us",
+
+  "contactUs_txt": "Our team is here to answer all your questions.",
+
+  "messagesent": "Message sent",
+
+  "sent": "Send",
+
+  "gmaps": "Google Maps",
+
+  "whosUs": "Who Are We?",
+
+"infoinfo": "An innovative startup driving digital transformation.",
+
+"stories_txt": "NOC is a startup founded in 2021 after participating in and being incubated by the VALBIOM Cluster located in Oujda.\n\nThe company's mission is to develop innovative solutions that combine traditional and modern technologies. Its first project was an enhanced smart switch, which earned seventh place in an innovation competition.\n\nToday, several solutions are under development, including an intelligent platform dedicated to poultry farmers operating closed-house farms.\n\nAlthough still in its early stages, the startup aims to expand nationally and internationally.",
+
+"ourVision_txt": "Building a world where traditional and modern technologies come together to create innovative and environmentally friendly solutions.",
+
+"ourMission_text": "Design intelligent, simple and accessible solutions that meet the needs of businesses, public organizations and individuals.",
+
+"ourValues_text": "Innovation\nQuality\nTransparency\nSustainability\nCollaboration\nExcellence",
+
+"deepia": "Deep Learning",
+
+"flutter_app": "Flutter Development",
+
+"cyber": "Cybersecurity",
+
+"visiocomput": "Computer Vision",
+
+"bigdata": "Data Science",
+"ourEv": "Our Evolution",
+
+"ourEv1": "Startup Founded",
+
+"ourEv2": "First Partnerships",
+
+"ourEv3": "Deployment of Our First Solutions",
+
+"ourEv4": "Seeking Funding",
+
+"ourEv5": "Seeking Funding and Partnerships",
+
+"accompagnement": "Support",
+
+"fin_txt1": "Together for sustainable, responsible and future-oriented solutions.",
+
+"fin_txt2": "Our ambition is to put technology at the service of sustainable innovation.",
+
+"fin_txt3": "Discover Our Solutions",
+
+  "close": "close",
+
+  "sendMessage": "Send Us a Message",
+
+  "name": "Last Name",
+
+  "firstName": "First Name",
+
+  "subject": "Subject",
+
+  "message": "Message",
+
+  "copyright": "All rights reserved."
+}

@@ -1,4 +1,10 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../provider/locale_provider.dart';
 
 class CustomFooter extends StatelessWidget {
   final int selectedIndex;
@@ -58,6 +64,13 @@ class CustomFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    final provider = Provider.of<LocaleProvider>(context, listen: false,);
+    final local = AppLocalizations.of(context)!;
+
+    String selectedLanguage = provider.locale.languageCode;
+
     return BottomAppBar(
       color: const Color(0xff0D1B2A),
       child: SafeArea(
@@ -70,27 +83,27 @@ class CustomFooter extends StatelessWidget {
               children: [
                 buildItem(
                   icon: Icons.home,
-                  title: "Home",
+                  title: local.home,
                   index: 0,
                 ),
                 buildItem(
                   icon: Icons.agriculture,
-                  title: "Nos solutions",
+                  title: local.solutions,
                   index: 1,
                 ),
                 buildItem(
                   icon: Icons.handshake,
-                  title: "Partenaires",
+                  title: local.partners,
                   index: 2,
                 ),
                 buildItem(
                   icon: Icons.call,
-                  title: "Contact",
+                  title: local.contact,
                   index: 3,
                 ),
                 buildItem(
                   icon: Icons.info,
-                  title: "Informations",
+                  title: local.information,
                   index: 4,
                 ),
               ],
