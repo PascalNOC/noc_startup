@@ -9,6 +9,10 @@ import 'package:provider/provider.dart';
 import '../../l10n/app_localizations.dart';
 import '../../provider/locale_provider.dart';
 
+import 'nocposition.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
 
@@ -73,21 +77,25 @@ class _ContactSectionState extends State<ContactSection> {
       loading = true;
     });
 
-    final response = await http.post(
-      Uri.parse(
-        "http://localhost/ConnectyShop/contact_nocstartup.php",
-      ),
-      body: {
-        "nom": nom.text,
-        "prenom": prenom.text,
-        "email": email.text,
-        "telephone": telephone.text,
-        "sujet": sujet.text,
-        "message": message.text,
-      },
-    );
+  final response = await http.post(
+    Uri.parse(
+      "https://script.google.com/macros/s/AKfycbxzd4LDbQsNAeE7gqc_aA8WfpOnRA5WSrmyEfyyae-fp-aNJdFQapIVTR1sEW8so46m/exec",
+    ),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: jsonEncode({
+      "nom": nom.text,
+      "prenom": prenom.text,
+      "email": email.text,
+      "telephone": telephone.text,
+      "sujet": sujet.text,
+      "message": message.text,
+    }),
+  );
   
-  final data=jsonDecode(response.body);
+  final data = jsonDecode(response.body);
+
   print(data);
 
   if(data["success"]==true){
@@ -466,31 +474,13 @@ class _ContactSectionState extends State<ContactSection> {
                   const SizedBox(height:30),
 
                   Container(
-
-                    height:350,
-
+                    height: 350,
                     decoration: BoxDecoration(
-
                       color: Colors.grey.shade300,
-
                       borderRadius: BorderRadius.circular(20),
-
                     ),
-
-                    child:  Center(
-
-                      child: Text(
-
-                        local.gmaps,
-
-                        textAlign: TextAlign.center,
-
-                        style: TextStyle(fontSize:22),
-
-                      ),
-
-                    ),
-
+                    clipBehavior: Clip.hardEdge,
+                    child:  MapPage(),
                   )
 
                 ],

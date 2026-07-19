@@ -9,7 +9,8 @@ flutter clean
 flutter pub get
 flutter gen-l10n
 
-
+firebase=======================================
+$HOME/.pub-cache/bin
 
 
 noc_startup :: Startup2030@2060*#  C5E5-3D89 

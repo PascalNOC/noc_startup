@@ -6,7 +6,13 @@ import 'pages/startup_home_page.dart';
 import 'provider/locale_provider.dart';
 import 'l10n/app_localizations.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+
 void main() {
+    WidgetsFlutterBinding.ensureInitialized();
+
+    await Firebase.initializeApp();
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => LocaleProvider(),
