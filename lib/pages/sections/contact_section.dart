@@ -44,99 +44,98 @@ class _ContactSectionState extends State<ContactSection> {
 
   Future<void> envoyerMessage() async {
 
-// Vérification des champs obligatoires
-    if (nom.text.isEmpty ||
-        prenom.text.isEmpty ||
-        email.text.isEmpty ||
-        telephone.text.isEmpty ||
-        sujet.text.isEmpty ||
-        message.text.isEmpty) {
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Veuillez remplir tous les champs."),
-        ),
-      );
-
-      return;
-    }
-
-    // Vérification de l'adresse email
-    if (!RegExp(r'^[\w\.-]+@[\w\.-]+\.\w+$').hasMatch(email.text.trim())) {
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Adresse email invalide."),
-        ),
-      );
-
-      return;
-    }
-
-    setState(() {
-      loading = true;
-    });
-
-  final response = await http.post(
-    Uri.parse(
-      "https://script.google.com/macros/s/AKfycbxzd4LDbQsNAeE7gqc_aA8WfpOnRA5WSrmyEfyyae-fp-aNJdFQapIVTR1sEW8so46m/exec",
-    ),
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonEncode({
-      "nom": nom.text,
-      "prenom": prenom.text,
-      "email": email.text,
-      "telephone": telephone.text,
-      "sujet": sujet.text,
-      "message": message.text,
-    }),
-  );
-  
-  final data = jsonDecode(response.body);
-
-  print(data);
-
-  if(data["success"]==true){
-
-    nom.clear();
-    prenom.clear();
-    email.clear();
-    telephone.clear();
-    sujet.clear();
-    message.clear();
+  // Vérification des champs obligatoires
+  if (nom.text.isEmpty ||
+      prenom.text.isEmpty ||
+      email.text.isEmpty ||
+      telephone.text.isEmpty ||
+      sujet.text.isEmpty ||
+      message.text.isEmpty) {
 
     ScaffoldMessenger.of(context).showSnackBar(
-
-      SnackBar(
-
-        content: Text(
-          AppLocalizations.of(context)!.messagesent,
-        ),
-
+      const SnackBar(
+        content: Text("Veuillez remplir tous les champs."),
       ),
-
     );
 
-  }else{
+    return;
+  }
+
+  // Vérification de l'email
+  if (!RegExp(r'^[\w\.-]+@[\w\.-]+\.\w+$')
+      .hasMatch(email.text.trim())) {
 
     ScaffoldMessenger.of(context).showSnackBar(
-
       const SnackBar(
-
-        content: Text(
-          "Erreur lors de l'envoi.",
-        ),
-
+        content: Text("Adresse email invalide."),
       ),
+    );
 
+    return;
+  }
+
+  setState(() {
+    loading = true;
+  });
+
+  try {
+
+    final uri = Uri.https(
+      "script.google.com",
+      "/macros/s/AKfycbxN0YeXoNq-e4fXigdeOGU_yKAUN7vKZKJxw4laz8qUl6PfSrP_RwZQg8O-w5ePVod9/exec",
+      {
+        "nom": nom.text,
+        "prenom": prenom.text,
+        "email": email.text,
+        "telephone": telephone.text,
+        "sujet": sujet.text,
+        "message": message.text,
+      },
+    );
+
+    final response = await http.get(uri);
+
+    final data = jsonDecode(response.body);
+
+    if (data["success"] == true) {
+
+      nom.clear();
+      prenom.clear();
+      email.clear();
+      telephone.clear();
+      sujet.clear();
+      message.clear();
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context)!.messagesent,
+          ),
+        ),
+      );
+
+    } else {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(data["message"] ?? "Erreur lors de l'envoi."),
+        ),
+      );
+
+    }
+
+  } catch (e) {
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Erreur : $e"),
+      ),
     );
 
   }
 
   setState(() {
-    loading=false;
+    loading = false;
   });
 
 }
