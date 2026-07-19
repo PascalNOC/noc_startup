@@ -42,6 +42,19 @@ class _ContactSectionState extends State<ContactSection> {
     super.dispose();
   }
 
+  Future<void> ouvrirLien(String url) async {
+
+    final Uri uri = Uri.parse(url);
+
+    if (!await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception("Impossible d'ouvrir $url");
+    }
+
+  }
+
   Future<void> envoyerMessage() async {
 
   // Vérification des champs obligatoires
@@ -364,20 +377,66 @@ class _ContactSectionState extends State<ContactSection> {
             const SizedBox(height:25),
 
             Wrap(
-
-              spacing:20,
-
+              spacing: 20,
               children: [
 
-                CircleAvatar(radius:30,child:Icon(Icons.facebook)),
-                CircleAvatar(radius:30,child:Icon(Icons.business)),
-                CircleAvatar(radius:30,child:Icon(Icons.chat)),
-                CircleAvatar(radius:30,child:Icon(Icons.video_library)),
-                CircleAvatar(radius:30,child:Icon(Icons.message)),
+                IconButton(
+                  icon: const FaIcon(
+                    FontAwesomeIcons.facebook,
+                    color: Colors.blue,
+                    size: 40,
+                  ),
+                  onPressed: () => ouvrirLien(
+                    "https://www.facebook.com",
+                  ),
+                ),
+
+                IconButton(
+                  icon: const FaIcon(
+                    FontAwesomeIcons.linkedin,
+                    color: Colors.blueAccent,
+                    size: 40,
+                  ),
+                  onPressed: () => ouvrirLien(
+                    "https://www.linkedin.com",
+                  ),
+                ),
+
+                IconButton(
+                  icon: const FaIcon(
+                    FontAwesomeIcons.instagram,
+                    color: Colors.pink,
+                    size: 40,
+                  ),
+                  onPressed: () => ouvrirLien(
+                    "https://www.instagram.com",
+                  ),
+                ),
+
+                IconButton(
+                  icon: const FaIcon(
+                    FontAwesomeIcons.xTwitter,
+                    color: Colors.black,
+                    size: 40,
+                  ),
+                  onPressed: () => ouvrirLien(
+                    "https://x.com",
+                  ),
+                ),
+
+                IconButton(
+                  icon: const FaIcon(
+                    FontAwesomeIcons.youtube,
+                    color: Colors.red,
+                    size: 40,
+                  ),
+                  onPressed: () => ouvrirLien(
+                    "https://www.youtube.com",
+                  ),
+                ),
 
               ],
-
-            ),
+            )
 
             const SizedBox(height:60),
 
